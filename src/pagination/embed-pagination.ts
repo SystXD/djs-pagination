@@ -64,7 +64,6 @@ export class EmbedPagination {
     })
       .on("collect", async (interaction) => {
         try {
-          await interaction.deferReply({ ephemeral: true });
           switch (interaction.customId) {
             case "index-page":
               currentPage = 0;
@@ -78,28 +77,18 @@ export class EmbedPagination {
 
             case "next-page":
               if (currentPage < EmbedsArray.length - 1) currentPage++;
-              else
-                interaction.followUp({
-                  content:
-                    "You are already on the last page. There are no more pages",
-                });
               interaction.update({ embeds: [EmbedsArray[currentPage]] });
               break;
 
             case "previous-page":
               if (currentPage > 0) currentPage--;
-              else
-                interaction.followUp({
-                  content:
-                    "You are already on the first page. There are no previous pages",
-                });
               interaction.update({ embeds: [EmbedsArray[currentPage]] });
               break;
             default:
               break;
           }
         } catch (error) {
-          console.error(error);
+          return console.error(error);
         }
       })
       .on("end", () => {
