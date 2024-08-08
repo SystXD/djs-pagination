@@ -5,11 +5,12 @@ import {
   InteractionResponse,
   CollectorFilter,
   ButtonInteraction,
+  BaseInteraction,
 } from "discord.js";
 
 export interface PaginationOptions {
   EmbedsArray: EmbedBuilder[];
-  ButtonsArray: ButtonBuilder[];
+  ButtonsArray?: ButtonBuilder[];
   Response: InteractionResponse | Message;
   filter?: CollectorFilter<[ButtonInteraction]>;
   collectorTime?: number;
