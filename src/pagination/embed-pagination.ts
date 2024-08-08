@@ -40,7 +40,7 @@ export class EmbedPagination {
           style: ButtonStyle.Danger,
         }),
         new ButtonBuilder({
-          label: "⬆️",
+          label: "⬇️",
           custom_id: "last-page",
           style: ButtonStyle.Danger,
         }),
