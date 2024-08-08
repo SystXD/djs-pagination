@@ -29,7 +29,7 @@ new EmbedPagination({
 
 **Customizing The Config**
 > [!NOTE]
-> In customizing buttons, the custom_id can only be one of the following: 'index-page', 'last-page', 'next-page', or 'previous-page.
+> In customizing buttons, the custom_id can only be these 4 of the following: 'index-page', 'last-page', 'next-page', or 'previous-page.
 
 ```js
 
